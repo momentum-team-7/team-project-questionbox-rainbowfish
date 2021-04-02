@@ -1,29 +1,30 @@
 import React from 'react'
-// import useLocalStorageState from 'use-local-storage-state'
 import About from './components/About'
-import Nav from './components/Nav' 
+import Nav from './components/Nav'
+import Home from './components/Home'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  // Link,
-  // Redirect,
-} from 'react-router-dom'
-// import { storeQuestion } from './components/api'
-
+  Link,
+  Redirect,
+} from 'react-router-dom';
 
 
 function App() {
+
   return (
     <Router>
       <div className="App">
         <Nav />
         <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/about" component={About}  />
+        
         </Switch>   
       </div>
     </Router>
+    
   )
 }
 
@@ -35,4 +36,6 @@ const Home = () => (
   </div>
 )
 
+
 export default App;
+
