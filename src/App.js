@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useState }from 'react'
 // import useLocalStorageState from 'use-local-storage-state'
-import About from './About'
-import Nav from './Nav'
+import About from './components/About'
+import Nav from './components/Nav'
 import {
-  BroswerRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect,
+  // Link,
+  // Redirect,
 } from 'react-router-dom'
+// import { storeQuestion } from './components/api'
 
-function App() {
+
+
+const App = () => {
   return (
     <Router>
       <div className="App">
@@ -22,11 +25,35 @@ function App() {
       </div>
     </Router>
   )
-
 }
+const [title, setTitle] = useState('')
+const [question, setQuestion] = useState('')
+
 const Home = () => (
   <div>
     <h1>Home Page</h1>
+    
+      <form>
+        <div>
+          <label for="question-title"></label>
+          <input
+            id="question-title"
+            type="text"
+            onChange={(event) => setTitle(event.target.value)}
+          ></input> 
+        </div>
+        <div>
+          <label for="question-body">
+            Question Title
+          </label>
+          <textarea
+            id="question-body"
+            name="question-body"
+            onChange={(event) => setQuestion(event.target.value)}
+          ></textarea>  
+        </div>
+      </form>
+    
   </div>
 )
 

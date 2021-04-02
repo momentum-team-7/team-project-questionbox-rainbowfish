@@ -7,8 +7,8 @@ function Nav() {
             <ul className="nav-links">
                 <Link to="/about">
                 <li>About</li>
-                
-            </ul>
+                </Link>
+           </ul>
         </nav>
     )
 }
