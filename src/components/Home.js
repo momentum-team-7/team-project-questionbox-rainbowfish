@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import data from './Categoriesapi.js' 
+import { Link } from 'react-router-dom';
+import GenreQuestions from './GenreQuestions.js'
 
 
 
@@ -9,6 +11,7 @@ import data from './Categoriesapi.js'
 
 function Home() {
     const [genres] = useState(data)
+    const [selectedGenre,setSelectedGenre] = useState('null')
 console.log(genres)
     return (
     <div>
@@ -16,12 +19,18 @@ console.log(genres)
     <ul>
     {genres.map((genre) => {
         console.log(genre)
-       return <h1>{genre.genre}</h1>
+       return <h2>
+           <Link to={`/question/${genre.id}`} onClick={() =>setSelectedGenre(genre)}>{genre.genre}</Link>
+           
+           
+           </h2>
      
 })}
+
     </ul>
     </div>
     )
+    console.log(selectedGenre)
 }
 
 
