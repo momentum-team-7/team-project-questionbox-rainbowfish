@@ -1,7 +1,7 @@
-import React, { useState }from 'react'
+import React from 'react'
 // import useLocalStorageState from 'use-local-storage-state'
 import About from './components/About'
-import Nav from './components/Nav'
+import Nav from './components/Nav' 
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +13,7 @@ import {
 
 
 
-const App = () => {
+function App() {
   return (
     <Router>
       <div className="App">
@@ -26,33 +26,11 @@ const App = () => {
     </Router>
   )
 }
-const [title, setTitle] = useState('')
-const [question, setQuestion] = useState('')
+
 
 const Home = () => (
   <div>
     <h1>Home Page</h1>
-    
-      <form>
-        <div>
-          <label for="question-title"></label>
-          <input
-            id="question-title"
-            type="text"
-            onChange={(event) => setTitle(event.target.value)}
-          ></input> 
-        </div>
-        <div>
-          <label for="question-body">
-            Question Title
-          </label>
-          <textarea
-            id="question-body"
-            name="question-body"
-            onChange={(event) => setQuestion(event.target.value)}
-          ></textarea>  
-        </div>
-      </form>
     
   </div>
 )
