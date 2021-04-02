@@ -1,14 +1,14 @@
 import React from 'react'
 // import useLocalStorageState from 'use-local-storage-state'
-import About from './About'
-import Nav from './Nav'
+import About from './components/About'
+import Nav from './components/Nav'
 import {
-  BroswerRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
   Link,
   Redirect,
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 function App() {
   return (
@@ -31,3 +31,4 @@ const Home = () => (
 )
 
 export default App;
+
