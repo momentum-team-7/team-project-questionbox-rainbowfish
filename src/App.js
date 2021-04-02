@@ -2,6 +2,7 @@ import React from 'react'
 import About from './components/About'
 import Nav from './components/Nav'
 import Home from './components/Home'
+import GenreQuestions from './components/GenreQuestions'
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,6 +21,7 @@ function App() {
         <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About}  />
+        <Route path="/GenreQuestions" component={GenreQuestions} />
         
         </Switch>   
       </div>

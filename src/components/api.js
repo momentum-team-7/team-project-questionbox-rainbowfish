@@ -1,8 +1,8 @@
 
 const dataQuestions = [
     {title: 'title 1', question: 'Question 1?', id: 1},
-    {title: 'title 1', question: 'Question 2?', id: 2},
-    {title: 'title 1', question: 'Question 3?', id: 3},
+    {title: 'title 1', question: 'Question 1?', id: 1},
+    {title: 'title 1', question: 'Question 1?', id: 1},
 
 ]
 

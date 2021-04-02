@@ -11,7 +11,7 @@ import GenreQuestions from './GenreQuestions.js'
 
 function Home() {
     const [genres] = useState(data)
-    const [selectedGenre,setSelectedGenre] = useState('null')
+    const [selectedGenre,setSelectedGenre] = useState(null)
 console.log(genres)
     return (
     <div>
@@ -20,7 +20,7 @@ console.log(genres)
     {genres.map((genre) => {
         console.log(genre)
        return <h2>
-           <Link to={`/question/${genre.id}`} onClick={() =>setSelectedGenre(genre)}>{genre.genre}</Link>
+           <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)}>{genre.genre}</Link>
            
            
            </h2>
@@ -30,7 +30,7 @@ console.log(genres)
     </ul>
     </div>
     )
-    console.log(selectedGenre)
+
 }
 
 
