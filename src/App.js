@@ -1,7 +1,8 @@
 import React from 'react'
-// import useLocalStorageState from 'use-local-storage-state'
 import About from './components/About'
 import Nav from './components/Nav'
+import Home from './components/Home'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,24 +12,24 @@ import {
 } from 'react-router-dom';
 
 function App() {
+
   return (
     <Router>
       <div className="App">
         <Nav />
         <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
+        {/* <Route path="/:id" component={Genre} /> */}
+        <Route path="/about" component={About}  />
+        
         </Switch>   
       </div>
     </Router>
+    
   )
 
 }
-const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-)
+
 
 export default App;
 
