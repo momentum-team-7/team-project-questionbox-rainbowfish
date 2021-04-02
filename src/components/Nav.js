@@ -11,8 +11,10 @@ function Nav() {
                 <Link to="/about">
                 <li>About</li>
                 </Link>
+
             
             </ul>
+
         </nav>
     )
 }
