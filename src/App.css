@@ -1,39 +1,98 @@
 body {
-    padding: 30px;
-    background: black ;
+  padding: 30px;
+  background: black;
 }
 
 header {
-    background: rgb(168, 230, 228);
-    height: 30vh;
+  background: rgb(168, 230, 228);
+  height: 30vh;
+  width: 95%;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid rgb(163, 215, 247);
 }
 
 #title {
-    font-family: 'Bangers', cursive;
-    font-size: 70px;
+  font-family: "Bangers", cursive;
+  font-size: 70px;
+  margin-top: 30px;
 }
+
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-    color: rgb(5, 2, 45);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: rgb(5, 2, 45);
 }
 
 .nav-links {
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    list-style: none;
-    font-size: 25px;
-    font-family: 'Oswald', sans-serif;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  margin: 0 auto;
+  /* background: rgb(168, 230, 228); */
+}
+
+.nav-item {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-item:hover {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.nav-item:visited {
+  color: black;
+}
+
+.genre-links {
+  font-family: "Oswald", sans-serif;
+  text-decoration: none;
+}
+
+.genre-links:visited {
+  color: white;
+}
+
+.genre-links:hover {
+  font-size: 28px;
+}
+
+.questions {
+  font-family: "Arial";
+  text-decoration: none;
+  color: white;
+}
+
+.questions:visited {
+  color: white;
+}
+
+.questions:hover {
+  font-size: 18px;
 }
 
 .answer-box {
-    width: 95%;
-    display: flex;
-    padding: 30px;
-    border: 1px solid rgb(163, 215, 247);
-    background:rgb(233, 240, 240)
+  font-family: "Arial";
+  width: 95%;
+  display: flex;
+  padding: 30px;
+  border: 1px solid rgb(163, 215, 247);
+  background: rgb(233, 240, 240);
+}
+
+.about {
+  font-family: "Arial";
+  color: white;
+}
+
+p {
+  font-family: "Arial";
+  color: white;
 }

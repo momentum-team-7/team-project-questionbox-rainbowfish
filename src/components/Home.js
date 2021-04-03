@@ -20,7 +20,7 @@ console.log(genres)
     {genres.map((genre) => {
         console.log(genre)
        return <h2>
-           <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)}>{genre.genre}</Link>
+           <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre.genre}</Link>
            
            
            </h2>

@@ -4,7 +4,8 @@ import React from 'react';
 function About() {
     return (
         <div>
-            <h1>About</h1>
+            <h1 className="about">About</h1>
+            <p>This is a totally awesome website that you should use and tell all your friends about. Follow us on instagram!!!!!! </p>
         </div>
     )
 }
