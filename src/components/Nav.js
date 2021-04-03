@@ -9,7 +9,13 @@ function Nav() {
                     <li>Home</li>
                 </Link>
                 <Link to="/about">
-                <li>About</li>
+                    <li>About</li>
+                </Link>
+                <Link to ="/login">
+                    <li>Login</li>
+                </Link>
+                <Link to="/register">
+                    <li>Register</li>
                 </Link>
 
             
