@@ -12,8 +12,10 @@ function GenreQuestions() {
             return <div>
                 <Link to={`/Answers/`} onClick={() =>setSelectedQuestion(question)}>
                 <h2>{question.title}</h2>
-                <h3>{question.question}</h3>
-                </Link>
+
+                <h3>{question.body}</h3>
+
+
                 </div>
                 
         })}
