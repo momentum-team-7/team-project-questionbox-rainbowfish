@@ -8,13 +8,13 @@ function QuestionAnswers() {
     return (
         <div>
             {answers.map((answer) => {
-            return <div>
+            return <div className='answer-box'>
 
-                
+                <div className="answer-content">
                 <h2>{answer.body}</h2>
 
                 <h3>{answer.author}</h3>
-
+                </div>
 
                 </div>
                 
