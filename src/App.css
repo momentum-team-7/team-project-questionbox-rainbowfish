@@ -67,11 +67,11 @@ nav {
 .questions {
   font-family: "Arial";
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .questions:visited {
-  color: white;
+  color: black;
 }
 
 .questions:hover {
