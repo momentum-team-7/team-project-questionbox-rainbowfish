@@ -9,7 +9,7 @@ function GenreQuestions() {
     return (
         <div>
             {questions.map((question) => {
-            return <div>
+            return <div className='answer-box'>
                 <Link to={`/Answers/`} onClick={() =>setSelectedQuestion(question)} className="questions">
                 <h2>{question.title}</h2>
 
