@@ -19,8 +19,13 @@ function App() {
 
   return (
     <Router>
+      
       <div className="App">
-        <Nav />
+        <header>
+          <h1 id="title">What <i><b>NOW</b></i>?</h1>
+          <Nav />
+        </header>
+        
         <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About}  />
