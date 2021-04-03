@@ -1,9 +1,9 @@
 
-const dataQuestions = [
-    {title: 'title 1', question: 'Question 1?', id: 1},
-    {title: 'title 1', question: 'Question 1?', id: 1},
-    {title: 'title 1', question: 'Question 1?', id: 1},
 
+const dataQuestions = [
+    {title: 'title1', body: 'body', created: '12/14/2021', author: 'username', tags: 'tags' },
+    {title: 'title2', body: 'body', created: '12/14/2021', author: 'username', tags: 'tags' },
+    {title: 'title3', body: 'body', created: '12/14/2021', author: 'username', tags: 'tags' },
 ]
 
 // let lastQuestionId = 3

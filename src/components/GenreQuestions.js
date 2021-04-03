@@ -9,7 +9,7 @@ function GenreQuestions() {
             {questions.map((question) => {
             return <div>
                 <h2>{question.title}</h2>
-                <h3>{question.question}</h3>
+                <h3>{question.body}</h3>
                 </div>
         })}
         </div>
