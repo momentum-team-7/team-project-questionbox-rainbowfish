@@ -15,19 +15,18 @@ function Home() {
 console.log(genres)
     return (
     <div>
-    <h1>Home Page</h1>
-    <ul>
+    
+    <div>
+    <ul className="genre-container">
     {genres.map((genre) => {
         console.log(genre)
-       return <h2>
-           <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre.genre}</Link>
-           
-           
-           </h2>
-     
+    return <h2 className="genre-item">
+        <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre.genre}</Link>
+        </h2>
 })}
 
     </ul>
+    </div>
     </div>
     )
 
