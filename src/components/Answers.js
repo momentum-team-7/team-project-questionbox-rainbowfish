@@ -7,7 +7,7 @@ function QuestionAnswers( props ) {
     const [answers] = useState(dataAnswers)
     const [reply, setReply] = useState(false)
     const {selectedQuestion} = props.location.state
-    // const {selectedQuestion} = useLocation();
+    
   
     console.log(selectedQuestion)
 
