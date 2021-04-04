@@ -52,11 +52,9 @@ nav {
 }
 
 .genre-container {
-  /* display: grid;
-  grid-template-columns: 341px 341px 341px 333px;
-  grid-template-rows: auto; */
   display: flex;
   flex-flow: column wrap;
+
   margin: 0 auto;
   padding: 0px;
 }
@@ -68,10 +66,12 @@ nav {
 
 .genre-item {
   text-align: center;
-  margin: auto;
+  margin: 0;
   line-height: 200px;
   border: 1px solid rgb(163, 215, 247);
-  width: 100%;
+  width: 95%;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .genre-links:visited {
