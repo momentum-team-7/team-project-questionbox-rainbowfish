@@ -19,7 +19,6 @@ console.log(genres)
     <div>
     <ul className="genre-container">
     {genres.map((genre) => {
-        console.log(genre)
     return <h2 className="genre-item">
         <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre.genre}</Link>
         </h2>

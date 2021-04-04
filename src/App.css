@@ -105,6 +105,24 @@ nav {
   background: rgb(233, 240, 240);
 }
 
+.question-answer {
+  font-family: "Arial";
+  width: 95%;
+  /* display: flex; */
+  padding: 30px;
+  border: 1px solid rgb(163, 215, 247);
+  background: rgb(233, 240, 240);
+}
+
+textarea {
+  width: 400px;
+  height: 150px;
+}
+
+button {
+  margin-left: 25px;
+}
+
 .about {
   font-family: "Arial";
   color: white;
