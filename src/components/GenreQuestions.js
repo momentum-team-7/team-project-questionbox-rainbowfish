@@ -4,7 +4,7 @@ import axios from 'axios';
 import QuestionField from './AddQuestion.js'
 import { Link } from 'react-router-dom';
 
-function GenreQuestions() {
+function GenreQuestions( ) {
     const [questions, setQuestions] = useState([])
     const [selectedQuestion, setSelectedQuestion] = useState(null)
     const [askQuestion, setAskQuestion] = useState(false)
@@ -30,6 +30,7 @@ function GenreQuestions() {
                 <h2>{question.title}</h2>
 
                 <h3>{question.body}</h3></Link>
+                <h4>{question.author.username}</h4>
 
 
                 </div>
