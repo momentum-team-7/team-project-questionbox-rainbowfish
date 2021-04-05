@@ -1,6 +1,7 @@
 import dataAnswers from './AnswerApi.js'
 import { useState } from 'react'
 import InputField from './AddAnswer.js'
+import LikeBtn from './LikeBtn.js'
 
 
 function QuestionAnswers( props ) {
@@ -31,6 +32,7 @@ function QuestionAnswers( props ) {
                 <h2>{answer.body}</h2>
 
                 <h3>{answer.author}</h3>
+                <LikeBtn />
                 </div>
 
                 </div>
