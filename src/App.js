@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import GenreQuestions from './components/GenreQuestions'
 import QuestionAnswers from './components/Answers'
+import UserProfile from './components/UserProfile'
 import {
   BrowserRouter as Router,
   Switch,
