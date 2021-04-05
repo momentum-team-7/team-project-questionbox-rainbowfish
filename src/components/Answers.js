@@ -15,6 +15,7 @@ function QuestionAnswers( props ) {
         <div>
             <div className="question-answer">
                 <h1>{selectedQuestion.title}</h1>
+                <h4>{selectedQuestion.author.username}</h4>
                 
 
 

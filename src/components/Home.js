@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import data from './Categoriesapi.js' 
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import GenreQuestions from './GenreQuestions.js'
 
 
@@ -10,9 +11,16 @@ import GenreQuestions from './GenreQuestions.js'
 
 
 function Home() {
-    const [genres] = useState(data)
+    const [genres, setGenres] = useState([])
     const [selectedGenre,setSelectedGenre] = useState(null)
-console.log(genres)
+    useEffect(() => {
+    axios.get(`https://questionbox-torpedo-shark.herokuapp.com/questions/`).then((response) => {
+        
+        setGenres(response.data)
+        
+    })}, [])
+    console.log(genres)
+
     return (
     <div>
     
@@ -20,7 +28,7 @@ console.log(genres)
     <ul className="genre-container">
     {genres.map((genre) => {
     return <h2 className="genre-item">
-        <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre.genre}</Link>
+        <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre.musicgenre}</Link>
         </h2>
 })}
 
