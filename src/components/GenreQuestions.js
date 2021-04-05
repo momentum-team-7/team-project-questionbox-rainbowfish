@@ -1,13 +1,21 @@
-import { useState } from 'react'
-import dataQuestions from './api.js'
+import { useState, useEffect } from 'react'
+// import dataQuestions from './api.js'
+import axios from 'axios';
 import QuestionField from './AddQuestion.js'
 import { Link } from 'react-router-dom';
 
 function GenreQuestions() {
-    const [questions] = useState(dataQuestions)
+    const [questions, setQuestions] = useState([])
     const [selectedQuestion, setSelectedQuestion] = useState(null)
     const [askQuestion, setAskQuestion] = useState(false)
-        // console.log(questions)
+    useEffect(() => {
+    axios.get(`https://questionbox-torpedo-shark.herokuapp.com/questions/`).then((response) => {
+        
+        setQuestions(response.data)
+        console.log(questions)
+        
+    })}, [])
+
     return (
         <div>
             <div className="question-answer">
