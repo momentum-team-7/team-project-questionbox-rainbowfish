@@ -16,6 +16,7 @@ function GenreQuestions() {
         
     })}, [])
 
+
     return (
         <div>
             <div className="question-answer">
