@@ -9,7 +9,7 @@ const QuestionField = ({askQuestion, setAskQuestion}) => {
     return (
       <>
         <textarea type="text" value={text} onChange={handleChange} placeholder="..."  style={askQuestion ? {} : { display: 'none' }}/>
-        <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? {} : { display: 'none' }}>Submit!</button>
+        <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? {} : { display: 'none' }}>Post</button>
       </>
     )
 }
