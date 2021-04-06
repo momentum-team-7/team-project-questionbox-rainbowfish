@@ -1,13 +1,13 @@
 import dataAnswers from './AnswerApi.js'
 import { useState } from 'react'
 import InputField from './AddAnswer.js'
-
+import { Link } from 'react-router-dom'
 
 function QuestionAnswers( props ) {
     const [answers] = useState(dataAnswers)
     const [reply, setReply] = useState(false)
     const {selectedQuestion} = props.location.state
-    
+    const [selectedUser, setSelectedUser] = useState(null)
   
     console.log(selectedQuestion)
 
@@ -30,7 +30,7 @@ function QuestionAnswers( props ) {
                 <div className="answer-content">
                 <h2>{answer.body}</h2>
 
-                <h3>{answer.author}</h3>
+                <Link onClick={() =>setSelectedUser()} className="answer-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: answer.author} }}><h3>{answer.author}</h3></Link>
                 </div>
 
                 </div>
