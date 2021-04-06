@@ -22,7 +22,7 @@ function GenreQuestions( ) {
     return (
         <div>
             <div className="question-answer">
-            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion}/>
+            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} />
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
             
@@ -33,13 +33,10 @@ function GenreQuestions( ) {
 
                 <h3>{question.body}</h3></Link>
                 <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author} }}> <h4>{question.author.username}</h4></Link>
-
-
                 </div>
-                
         })}
         </div>
- )
+)
 }
 
 export default GenreQuestions

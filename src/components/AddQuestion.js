@@ -12,6 +12,11 @@ const QuestionField = ({askQuestion, setAskQuestion}) => {
     // }
 
     const handleSubmit = (event) => {
+      let config = {
+        auth: {
+          "username":"Tatiana", "password":"password"
+        },
+        }
       event.preventDefault()
       axios.post(
         'https://questionbox-torpedo-shark.herokuapp.com/questions/',
@@ -19,8 +24,13 @@ const QuestionField = ({askQuestion, setAskQuestion}) => {
           title: title,
           body: body,
           tags: tags
-      }
-      )
+        },
+        config,
+      ).then(res => {
+        console.log('res ', res.data)
+      }).catch(err => {
+        console.log('err ', err)
+      })
       
     }
 
