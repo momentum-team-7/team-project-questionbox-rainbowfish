@@ -25,7 +25,7 @@ function GenreQuestions( ) {
             <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion}/>
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
-
+            
             {questions.map((question) => {
             return <div className='answer-box'>
                 <Link onClick={() =>setSelectedQuestion(question)} className="questions" to={{ pathname:`/Answers/`, state: {selectedQuestion: question} }} >
