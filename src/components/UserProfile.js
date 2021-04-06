@@ -12,9 +12,11 @@ function UserProfile({ location }) {
                 return
                  <div className='user-profile'>
                     <h1>{selectedUser.username}</h1>
-                    <h2>LOCATION</h2>
-                    <h2>JOIN YEAR</h2>
-                    <h2>BIO</h2>
+                    <div className='profile-items'>
+                        <h2>LOCATION</h2>
+                        <h2>JOIN YEAR</h2>
+                        <h2>BIO</h2>
+                    </div>
                 </div>
             
            
