@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import GenreQuestions from './components/GenreQuestions'
 import QuestionAnswers from './components/Answers'
+import UserProfile from './components/UserProfile'
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,6 +34,7 @@ function App() {
         <Route path="/Register" component={Register}/>
         <Route path="/GenreQuestions" component={GenreQuestions} />
         <Route path="/Answers" component={QuestionAnswers} />
+        <Route path="/UserProfile" component={UserProfile} />
         
         </Switch>   
       </div>

@@ -8,6 +8,8 @@ function GenreQuestions( ) {
     const [questions, setQuestions] = useState([])
     const [selectedQuestion, setSelectedQuestion] = useState(null)
     const [askQuestion, setAskQuestion] = useState(false)
+    const [selectedUser, setSelectedUser] = useState(null)
+    
     useEffect(() => {
     axios.get(`https://questionbox-torpedo-shark.herokuapp.com/questions/`).then((response) => {
         
@@ -30,7 +32,7 @@ function GenreQuestions( ) {
                 <h2>{question.title}</h2>
 
                 <h3>{question.body}</h3></Link>
-                <h4>{question.author.username}</h4>
+                <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author} }}> <h4>{question.author.username}</h4></Link>
 
 
                 </div>

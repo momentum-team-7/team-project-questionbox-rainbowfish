@@ -3,12 +3,13 @@ import { useState } from 'react'
 import InputField from './AddAnswer.js'
 import LikeBtn from './LikeBtn.js'
 
+import { Link } from 'react-router-dom'
 
 function QuestionAnswers( props ) {
     const [answers] = useState(dataAnswers)
     const [reply, setReply] = useState(false)
     const {selectedQuestion} = props.location.state
-    
+    const [selectedUser, setSelectedUser] = useState(null)
   
     console.log(selectedQuestion)
 
@@ -33,6 +34,7 @@ function QuestionAnswers( props ) {
 
                 <h3>{answer.author}</h3>
                 <LikeBtn />
+                <Link onClick={() =>setSelectedUser()} className="answer-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: answer.author} }}><h3>{answer.author}</h3></Link>
                 </div>
 
                 </div>
