@@ -32,7 +32,7 @@ function GenreQuestions( ) {
                 <h2>{question.title}</h2>
 
                 <h3>{question.body}</h3></Link>
-                <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author} }}> <h4>{question.author.username}</h4></Link>
+                <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author, userQuestion: question.body } }}> <h4>{question.author.username}</h4></Link>
 
 
                 </div>
