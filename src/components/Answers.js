@@ -31,10 +31,10 @@ function QuestionAnswers( props ) {
 
                 <div className="answer-content">
                 <h2>{answer.body}</h2>
-
-                <h3>{answer.author}</h3>
-                <LikeBtn />
                 <Link onClick={() =>setSelectedUser()} className="answer-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: answer.author} }}><h3>{answer.author}</h3></Link>
+                
+                <LikeBtn />
+                
                 </div>
 
                 </div>
