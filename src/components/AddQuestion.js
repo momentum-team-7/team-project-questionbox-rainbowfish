@@ -2,21 +2,13 @@ import axios from 'axios'
 import {useState} from 'react'
 
 
-const QuestionField = ({askQuestion, setAskQuestion, token}) => {
-    // const [text, setText] = useState('')
+const QuestionField = ({askQuestion, setAskQuestion, token }) => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [tags, setTags] = useState("")
-    // const handleChange = (event) => {
-    //   setText(event.target.value)
-    // }
+
 
     const handleSubmit = (event) => {
-      // let config = {
-      //   auth: {
-      //     "username":"Tatiana", "password":"password"
-      //   },
-      //   }
       event.preventDefault()
       axios.post(
         'https://questionbox-torpedo-shark.herokuapp.com/questions/',

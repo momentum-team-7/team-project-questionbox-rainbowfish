@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 // import dataQuestions from './api.js'
 import axios from 'axios';
 import QuestionField from './AddQuestion.js'
+import DeleteQuestion from './DeleteQuestion.js'
 import { Link } from 'react-router-dom';
 
 function GenreQuestions( {token} ) {
@@ -32,11 +33,13 @@ function GenreQuestions( {token} ) {
                 <h2>{question.title}</h2>
 
                 <h3>{question.body}</h3></Link>
+                
 
                 <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author, userQuestion: question.body } }}> <h4>{question.author.username}</h4></Link>
 
-
+                <DeleteQuestion selectedQuestion={selectedQuestion} setSelectedQuestion={setSelectedQuestion} />
                 </div>
+                
         })}
         </div>
 )
