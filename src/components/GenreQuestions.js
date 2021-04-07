@@ -4,7 +4,7 @@ import axios from 'axios';
 import QuestionField from './AddQuestion.js'
 import { Link } from 'react-router-dom';
 
-function GenreQuestions( ) {
+function GenreQuestions( {token} ) {
     const [questions, setQuestions] = useState([])
     const [selectedQuestion, setSelectedQuestion] = useState(null)
     const [askQuestion, setAskQuestion] = useState(false)
@@ -22,7 +22,7 @@ function GenreQuestions( ) {
     return (
         <div>
             <div className="question-answer">
-            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} />
+            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} token={token} />
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
             

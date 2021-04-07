@@ -3,24 +3,11 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import useLocalStorageState from 'use-local-storage-state'
 
-function Login () {
+function Login ({isLoggedIn, token, setAuth, username, logOut, setUsername}) {
 
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState('')
-  const [username, setUsername] = useLocalStorageState('username', '')
-  const [token, setToken] = useLocalStorageState('token', '')
 
-  function setAuth(username, token) {
-    setUsername(username)
-    setToken(token)
-  };
-
-  function logOut() {
-    setUsername(null)
-    setToken(null)
-  }
-
-  const isLoggedIn = username && token 
 
   // if (isLoggedIn) {
   //   return <Redirect to='/' />

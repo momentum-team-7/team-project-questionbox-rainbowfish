@@ -18,6 +18,20 @@ import {
 
 
   function App() {
+    const [username, setUsername] = useLocalStorageState('username', '')
+    const [token, setToken] = useLocalStorageState('token', '')
+  
+    function setAuth(username, token) {
+      setUsername(username)
+      setToken(token)
+    };
+  
+    function logOut() {
+      setUsername(null)
+      setToken(null)
+    }
+  
+    const isLoggedIn = username && token 
 
 
   return (
@@ -32,12 +46,19 @@ import {
         <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About}  />
-        <Route path="/Login" component={Login} />
+        <Route path="/Login" component={Login}>
+          <Login  setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} username={username} logOut={logOut} setUsername={setUsername} />
+        </Route>
        
   
           
-        <Route path="/Register" component={Register}/>
-        <Route path="/GenreQuestions" component={GenreQuestions} />
+        <Route path="/Register">
+          <Register setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} username={username} logOut={logOut} setUsername={setUsername} />
+        </Route>
+
+        <Route path="/GenreQuestions">
+          <GenreQuestions token={token} />
+        </Route>
         <Route path="/Answers" component={QuestionAnswers} />
         <Route path="/UserProfile" component={UserProfile} />
         

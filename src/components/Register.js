@@ -3,17 +3,9 @@ import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
 import useLocalStorageState from 'use-local-storage-state'
 
-export default function Registration() {
+export default function Registration({token, username, setAuth, isLoggedIn, setUsername}) {
     const [password, setPassword] = useState('')
-    const [username, setUsername] = useLocalStorageState('username', '')
-    const [token, setToken] = useLocalStorageState('token', '')
-
-    function setAuth(username, token) {
-        setUsername(username)
-        setToken(token)
-      };
-
-      const isLoggedIn = username && token 
+    
 
 
 
