@@ -27,11 +27,11 @@ function QuestionAnswers( props ) {
             </div>
             
             {answers.map((answer) => {
-            return <div className='answer-box'>
+            return <div className='answer-box' >
 
                 <div className="answer-content">
                 <h2>{answer.body}</h2>
-                <Link onClick={() =>setSelectedUser()} className="answer-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: answer.author} }}><h3>{answer.author}</h3></Link>
+                <Link onClick={() =>setSelectedUser()} className="answer-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: answer.author, userAnswer: answer.body } }}><h3>{answer.author}</h3></Link>
                 
                 <LikeBtn />
                 

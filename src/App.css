@@ -168,7 +168,7 @@ button {
 
 .user-profile {
   font-family: "Arial";
-  font-size: 30px;
+  font-size: 20px;
   width: 95%;
   display: flex;
   flex-wrap: wrap;
@@ -179,7 +179,7 @@ button {
 }
 
 .profile-items {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 form {
@@ -194,6 +194,20 @@ input {
   border: 3px solid rgb(0, 0, 0);
 }
 
+.like-box {
+    display: flex;
+    flex-direction: row;
+    
+}
+.like-btn {
+    border-radius: 50%;
+    width: 50px;
+    
+}
+.dislike-btn {
+    border-radius: 50%;
+    width: 50px;
+}
 /* .search-scroll {
   overflow-x: hidden;
   overflow-y: auto;
