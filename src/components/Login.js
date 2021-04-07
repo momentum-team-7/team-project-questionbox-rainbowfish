@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 
-function Login ({ isLoggedIn, setAuth }) {
+function Login ({ isLoggedIn, setAuth, setAuthTest }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState('')
@@ -12,7 +12,13 @@ function Login ({ isLoggedIn, setAuth }) {
     return <Redirect to='/' />
   }
   
+//   setAuthTest();
+// const setAuth1  = () => {
+//     setAuthTest()
+// }
+
   function handleSubmit (event) {
+    // setAuth1()
     event.preventDefault()
     axios
       .post('http://questionbox-torpedo-shark.herokuapp.com/auth/token/login', {

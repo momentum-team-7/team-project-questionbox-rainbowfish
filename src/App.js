@@ -1,4 +1,5 @@
 import React from 'react'
+import useLocalStorageState from 'use-local-storage-state'
 import About from './components/About'
 import Nav from './components/Nav'
 import Home from './components/Home'
@@ -16,7 +17,25 @@ import {
 } from 'react-router-dom';
 
 
-function App() {
+  function App() {
+    const [username, setUsername] = useLocalStorageState('username', '')
+    const [token, setToken] = useLocalStorageState('token', '')
+
+    function setAuth(username, token) {
+      setUsername(username)
+      setToken(token)
+    };
+
+    const setAuthTest = () => {
+      console.log('test')
+    };
+
+    // function setAuthTest() {
+    //   console.log('test')
+    // }
+
+    const isLoggedIn = username && token 
+
 
   return (
     <Router>
@@ -30,7 +49,10 @@ function App() {
         <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About}  />
-        <Route path="/Login" component={Login}/>
+        <Route path="/Login" render={({ setAuth, isLoggedIn, token, setAuthTest }) => (
+    <Login setAuth={setAuth} setAuthTest={setAuthTest} isLoggedIn={isLoggedIn} token={token} />
+  )}/>
+          
         <Route path="/Register" component={Register}/>
         <Route path="/GenreQuestions" component={GenreQuestions} />
         <Route path="/Answers" component={QuestionAnswers} />
