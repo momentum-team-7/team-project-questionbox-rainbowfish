@@ -22,19 +22,17 @@ import {
     const [token, setToken] = useLocalStorageState('token', '')
     const [selectedGenre,setSelectedGenre] = useState('Booty Bass')
 
+
     function setAuth(username, token) {
       setUsername(username)
       setToken(token)
     };
-
-    const setAuthTest = () => {
-      console.log('test')
-    };
-
-    // function setAuthTest() {
-    //   console.log('test')
-    // }
-
+  
+    function logOut() {
+      setUsername(null)
+      setToken(null)
+    }
+  
     const isLoggedIn = username && token 
 
 
@@ -52,14 +50,19 @@ import {
         <Home setSelectedGenre={setSelectedGenre}/>
           </Route>
         <Route path="/about" component={About}  />
-        <Route path="/Login" render={({ setAuth, isLoggedIn, token, setAuthTest }) => (
-    <Login setAuth={setAuth} setAuthTest={setAuthTest} isLoggedIn={isLoggedIn} token={token} />
-  )}/>
-          
-        <Route path="/Register" component={Register}/>
+        <Route path="/Login" component={Login}>
+          <Login  setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} username={username} logOut={logOut} setUsername={setUsername} />
+        </Route> 
+
         <Route path="/GenreQuestions" >
-          <GenreQuestions selectedGenre={selectedGenre} />
+          <GenreQuestions token={token} selectedGenre={selectedGenre} />
           </Route>
+
+        <Route path="/Register">
+          <Register setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} username={username} logOut={logOut} setUsername={setUsername} />
+        </Route>
+
+        
         <Route path="/Answers" component={QuestionAnswers} />
         <Route path="/UserProfile" component={UserProfile} />
         

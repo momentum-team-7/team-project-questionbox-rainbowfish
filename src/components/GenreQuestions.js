@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react'
 // import dataQuestions from './api.js'
 import axios from 'axios';
 import QuestionField from './AddQuestion.js'
+import DeleteQuestion from './DeleteQuestion.js'
 import { Link } from 'react-router-dom';
 
-function GenreQuestions({ selectedGenre } ) {
+
+function GenreQuestions({ selectedGenre, token } ) {
+
     const [questions, setQuestions] = useState([])
     const [selectedQuestion, setSelectedQuestion] = useState(null)
     const [askQuestion, setAskQuestion] = useState(false)
@@ -34,7 +37,7 @@ function GenreQuestions({ selectedGenre } ) {
     return (
         <div>
             <div className="question-answer">
-            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} />
+            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} token={token} />
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
             
@@ -44,11 +47,13 @@ function GenreQuestions({ selectedGenre } ) {
                 <h2>{question.title}</h2>
 
                 <h3>{question.body}</h3></Link>
+                
 
                 <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author, userQuestion: question.body } }}> <h4>{question.author.username}</h4></Link>
 
-
+                <DeleteQuestion selectedQuestion={selectedQuestion} setSelectedQuestion={setSelectedQuestion} />
                 </div>
+                
         })}
         </div>
 )

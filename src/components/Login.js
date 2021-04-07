@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import useLocalStorageState from 'use-local-storage-state'
 
+function Login ({isLoggedIn, token, setAuth, username, logOut, setUsername}) {
 
-function Login ({ isLoggedIn, setAuth, setAuthTest }) {
-  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState('')
 
-  if (isLoggedIn) {
-    return <Redirect to='/' />
-  }
+
+  // if (isLoggedIn) {
+  //   return <Redirect to='/' />
+  // }
   
 //   setAuthTest();
 // const setAuth1  = () => {
@@ -36,9 +37,11 @@ function Login ({ isLoggedIn, setAuth, setAuthTest }) {
   }
   return (
     <div>
-      <p>Login</p>
-      <form onSubmit={handleSubmit}>
-        {errors && <div>{errors}</div>}
+      <p style={isLoggedIn ? { display: 'none' } : {}}>Login</p>
+      <p style={isLoggedIn ? {} : { display: 'none' }}>Logout</p>
+      <button onClick={() => logOut()} style={isLoggedIn ? {} : { display: 'none' }}>Logout!</button>
+      <form onSubmit={handleSubmit} style={isLoggedIn ? { display: 'none' } : {}}>
+        {errors && <p>{errors}</p>}
   <div>
     <label to='username'>
       Username

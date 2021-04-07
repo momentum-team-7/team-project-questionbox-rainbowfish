@@ -1,3 +1,4 @@
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ function Nav() {
                 <Link to="/register" className="nav-item">
                     <li>Register</li>
                 </Link>
+
 
             
             </ul>
