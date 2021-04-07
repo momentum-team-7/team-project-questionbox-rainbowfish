@@ -6,6 +6,7 @@ const QuestionField = ({askQuestion, setAskQuestion, token }) => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [tags, setTags] = useState("")
+    const [musicGenre, setMusicGenre] = useState("")
 
 
     const handleSubmit = (event) => {
@@ -15,7 +16,8 @@ const QuestionField = ({askQuestion, setAskQuestion, token }) => {
         {
           title: title,
           body: body,
-          tags: tags
+          tags: tags,
+          musicgenre: musicGenre
           
         },
         {
@@ -35,7 +37,21 @@ const QuestionField = ({askQuestion, setAskQuestion, token }) => {
         <input type="text" onChange={(event) => setTitle(event.target.value)} placeholder="What's on your mind?" style={askQuestion ? {} : { display: 'none' }}/>
         <textarea type="text" onChange={(event) => setBody(event.target.value)} placeholder="Add some detail.."  style={askQuestion ? {} : { display: 'none' }}/>
         <input type="text" onChange={(event) => setTags(event.target.value)} placeholder="tags tags tags" style={askQuestion ? {} : { display: 'none' }}/>
-
+        <select onChange={(event) => setMusicGenre(event.target.value)} style={askQuestion ? {} : { display: 'none' }} placeholder="Select Genre">
+        <option value="" disabled selected>Select Genre</option>
+          <option value="Country">Country</option>
+          <option value="Folk">Folk</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Rock">Rock</option>
+          <option value="R&B">R&B</option>
+          <option value="Pop">Pop</option>
+          <option value="Christmas">Christmas</option>
+          <option value="Booty Bass">Booty Bass</option>
+          <option value="Indie">Indie</option>
+          <option value="Hip-Hop/Rap">Hip-Hop/Rap</option>
+          <option value="Alternative">Alternative</option>
+        </select>
+        
         <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? {} : { display: 'none' }} type="submit">Post</button>
         </form>
       </>
