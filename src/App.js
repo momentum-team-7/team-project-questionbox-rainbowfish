@@ -20,17 +20,6 @@ import {
   function App() {
 
 
-    const setAuthTest = () => {
-      console.log('test')
-    };
-
-    // function setAuthTest() {
-    //   console.log('test')
-    // }
-
-
-
-
   return (
     <Router>
       

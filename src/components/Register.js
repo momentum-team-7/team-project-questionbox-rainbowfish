@@ -1,14 +1,21 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, Redirect } from 'react-router-dom'
+import useLocalStorageState from 'use-local-storage-state'
 
-export default function Registration({ isLoggedIn, setAuth }) {
-    const [username, setUsername] = useState('')
+export default function Registration() {
     const [password, setPassword] = useState('')
+    const [username, setUsername] = useLocalStorageState('username', '')
+    const [token, setToken] = useLocalStorageState('token', '')
 
-    if (isLoggedIn) {
-        return <Redirect to='/' />
-    }
+    function setAuth(username, token) {
+        setUsername(username)
+        setToken(token)
+      };
+
+      const isLoggedIn = username && token 
+
+
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -33,8 +40,9 @@ export default function Registration({ isLoggedIn, setAuth }) {
 
     return (
         <div>
-            <p>Register Here:</p>
-            <form onSubmit={handleSubmit}>
+            <p style={isLoggedIn ? { display: 'none' } : {}}>Register Here:</p>
+            <p style={isLoggedIn ? {} : { display: 'none' }}>Log Out to Register a New Account.</p>
+            <form onSubmit={handleSubmit} style={isLoggedIn ? { display: 'none' } : {}}>
                 <div>
                     <label to='username'>Username:</label>
                     <input 
