@@ -6,7 +6,7 @@ import GenreQuestions from './GenreQuestions'
 
 function UserProfile(props) {
     
-    const {selectedUser, userQuestion} = props.location.state
+    const {selectedUser, userQuestion, userAnswer} = props.location.state
     // const {userQuestion} = props.location.state
     return (
         <div>
@@ -23,6 +23,10 @@ function UserProfile(props) {
                         <h2> {selectedUser.username}'s Question History</h2>
                         <h4>{userQuestion}</h4>
                     </div>
+                    <div className='user-answer'>
+                        <h2> {selectedUser.username}'s Answer History</h2>
+                        <h4>{userAnswer}</h4>
+                    </div>    
                 </div>
             
               
