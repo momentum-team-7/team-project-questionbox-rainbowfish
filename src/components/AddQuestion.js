@@ -24,6 +24,7 @@ const QuestionField = ({askQuestion, setAskQuestion}) => {
           title: title,
           body: body,
           tags: tags
+          
         },
         config,
       ).then(res => {

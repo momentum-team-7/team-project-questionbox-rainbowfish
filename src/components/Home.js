@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import data from './Categoriesapi.js' 
+import GENRES from './Categoriesapi.js' 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import GenreQuestions from './GenreQuestions.js'
@@ -10,25 +10,27 @@ import GenreQuestions from './GenreQuestions.js'
 
 
 
-function Home() {
-    const [genres, setGenres] = useState([])
-    const [selectedGenre,setSelectedGenre] = useState(null)
-    useEffect(() => {
-    axios.get(`https://questionbox-torpedo-shark.herokuapp.com/questions/`).then((response) => {
+function Home({ setSelectedGenre }) {
+    const [genres, setGenres] = useState('')
+    
+    
+    // useEffect(() => {
+    // axios.get(`https://questionbox-torpedo-shark.herokuapp.com/questions/`).then((response) => {
         
-        setGenres(response.data)
+    //     setGenres(response.data)
         
-    })}, [])
-    console.log(genres)
+    // })}, [])
+    // console.log(genres)
 
+   
     return (
     <div>
     
     <div>
     <ul className="genre-container">
-    {genres.map((genre) => {
-    return <h2 className="genre-item">
-        <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre.musicgenre}</Link>
+    {GENRES.map((genre) => {
+    return <h2 key={genre} className="genre-item">
+        <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre}</Link>
         </h2>
 })}
 
