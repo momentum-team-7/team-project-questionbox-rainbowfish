@@ -147,7 +147,7 @@ button {
 }
 
 p {
-  font-family: "Arial";
+  font-family: "Roboto";
   color: white;
 }
 
@@ -167,19 +167,32 @@ button {
 }
 
 .user-profile {
-  font-family: "Arial";
+  font-family: "Roboto";
   font-size: 20px;
+  color: white;
   width: 95%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  padding: 30px;
-  border: 3px solid rgb(163, 215, 247);
-  background: rgb(233, 240, 240);
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0px;
+  border: 1px solid rgb(163, 215, 247);
+  background: black;
 }
 
 .profile-items {
   font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 50px;
+}
+.user-questions {
+    padding: 50px;
+}
+.user-answer {
+    padding: 50px;
 }
 
 form {
