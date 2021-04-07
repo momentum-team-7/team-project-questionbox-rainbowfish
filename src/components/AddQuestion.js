@@ -16,6 +16,7 @@ const QuestionField = ({askQuestion, setAskQuestion, token }) => {
           title: title,
           body: body,
           tags: tags
+          
         },
         {
           headers: { Authorization: `Token ${token}`},

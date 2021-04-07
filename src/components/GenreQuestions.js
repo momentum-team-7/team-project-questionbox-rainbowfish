@@ -5,20 +5,34 @@ import QuestionField from './AddQuestion.js'
 import DeleteQuestion from './DeleteQuestion.js'
 import { Link } from 'react-router-dom';
 
-function GenreQuestions( {token} ) {
+
+function GenreQuestions({ selectedGenre, token } ) {
+
     const [questions, setQuestions] = useState([])
     const [selectedQuestion, setSelectedQuestion] = useState(null)
     const [askQuestion, setAskQuestion] = useState(false)
     const [selectedUser, setSelectedUser] = useState(null)
-    
+    const [filteredQuestions, setFilteredQuestions] = useState([])
+        // console.log(selectedGenre)
     useEffect(() => {
     axios.get(`https://questionbox-torpedo-shark.herokuapp.com/questions/`).then((response) => {
         
         setQuestions(response.data)
-        console.log(questions)
-        
+        // console.log('rspdatamg', response.data.map(genre => genre.musicgenre))
+        // const musicGenre = response.data.map(genre => genre.musicgenre)
+        // const ques = response.data.filter(question => selectedGenre === response.data.map(genre => genre.musicgenre))
+        // console.log('ques', ques)
+        //  if (selectedGenre === musicGenre) {
+        //     setFilteredQuestions(questions)
+        //     console.log('filter music genre', musicGenre)
+        // }
     })}, [])
+    // console.log('filteredQuestions', filteredQuestions)
 
+    // function filterQuestions() {
+       
+    // } 
+    // filterQuestions()
 
     return (
         <div>
@@ -27,8 +41,8 @@ function GenreQuestions( {token} ) {
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
             
-            {questions.map((question) => {
-            return <div className='answer-box'>
+            {questions.map((question, idx) => {
+            return <div key={`${question}-${idx}`} className='answer-box'>
                 <Link onClick={() =>setSelectedQuestion(question)} className="questions" to={{ pathname:`/Answers/`, state: {selectedQuestion: question} }} >
                 <h2>{question.title}</h2>
 

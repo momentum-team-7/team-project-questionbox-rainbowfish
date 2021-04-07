@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
 import About from './components/About'
 import Nav from './components/Nav'
@@ -20,7 +20,9 @@ import {
   function App() {
     const [username, setUsername] = useLocalStorageState('username', '')
     const [token, setToken] = useLocalStorageState('token', '')
-  
+    const [selectedGenre,setSelectedGenre] = useState('Booty Bass')
+
+
     function setAuth(username, token) {
       setUsername(username)
       setToken(token)
@@ -44,21 +46,23 @@ import {
         </header>
         
         <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact>
+        <Home setSelectedGenre={setSelectedGenre}/>
+          </Route>
         <Route path="/about" component={About}  />
         <Route path="/Login" component={Login}>
           <Login  setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} username={username} logOut={logOut} setUsername={setUsername} />
-        </Route>
-       
-  
-          
+        </Route> 
+
+        <Route path="/GenreQuestions" >
+          <GenreQuestions token={token} selectedGenre={selectedGenre} />
+          </Route>
+
         <Route path="/Register">
           <Register setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} username={username} logOut={logOut} setUsername={setUsername} />
         </Route>
 
-        <Route path="/GenreQuestions">
-          <GenreQuestions token={token} />
-        </Route>
+        
         <Route path="/Answers" component={QuestionAnswers} />
         <Route path="/UserProfile" component={UserProfile} />
         
