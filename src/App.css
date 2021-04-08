@@ -250,7 +250,14 @@ option {
   border: 3px solid rgb(163, 215, 247);
   border-radius: 25%;
 }
-
+.empty-message {
+  font-family: 'Bangers';
+  font-size: 70px;
+  color: #f71735;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 #scroller2 {
   overflow-x: hidden;
