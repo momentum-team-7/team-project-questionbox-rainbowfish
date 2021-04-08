@@ -19,8 +19,9 @@ function GenreQuestions({ selectedGenre, token, questions } ) {
     }, [])    
     
     let showNewQuestion = (newQ) => {
+        
         questions.push(newQ)
-        setFilteredQuestions([...questions])
+        setFilteredQuestions([...questions.filter((question) => selectedGenre === question.musicgenre)])
     }
 
     return (
