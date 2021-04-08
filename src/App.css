@@ -60,7 +60,7 @@ nav {
 }
 
 .genre-links {
-  font-family: 'Bangers';
+  font-family: "Bangers";
   text-decoration: none;
 }
 
@@ -233,15 +233,16 @@ input {
   width: 50px;
 }
 
-
 .team-name {
   margin: 0 auto;
   font-family: "Nanum Brush Script", cursive;
   font-size: 75px;
+  color: rgb(205, 11, 11);
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 #scroller {
-    overflow-x: hidden;
+  overflow-x: hidden;
   overflow-y: auto;
   height: 500px;
 }
@@ -250,7 +251,6 @@ option {
   border: 3px solid rgb(163, 215, 247);
   border-radius: 25%;
 }
-
 
 #scroller2 {
   overflow-x: hidden;
