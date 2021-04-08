@@ -2,7 +2,7 @@ import axios from 'axios'
 import {useState} from 'react'
 
 
-const DeleteQuestion = ({ token, selectedQuestion }) => {
+const DeleteQuestion = ({ token, question}) => {
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
     const [tags, setTags] = useState('')
@@ -12,16 +12,16 @@ const DeleteQuestion = ({ token, selectedQuestion }) => {
     const handleSubmit = (event) => {
       
     //   event.preventDefault()
-      axios.post(
-        `https://questionbox-torpedo-shark.herokuapp.com/questions/${selectedQuestion.id}`,
-        {
-          title: title,
-          body: body,
-          tags: tags
-        },
+      axios.delete(
+        `https://questionbox-torpedo-shark.herokuapp.com/questions/${question.id}/`,
+       
         {
           headers: { Authorization: `Token ${token}`},
-      }
+          data: {
+           
+          }
+      },
+     
       ).then(res => {
         console.log('res ', res.data)
       }).catch(err => {
