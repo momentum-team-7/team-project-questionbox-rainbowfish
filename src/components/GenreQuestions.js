@@ -31,35 +31,37 @@ function GenreQuestions({ selectedGenre, token } ) {
        
     // } 
     // filterQuestions()
+
+    
     let showNewQuestion = (newQ) => {
         questions.push(newQ)
         setQuestions([...questions])
-        // forceUpdate()
+      
     }
 
     return (
         <div>
-            <div className="question-answer">
-            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} token={token} newQuestion={showNewQuestion}/>
-            <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
-            </div>
-            
+            <div id="scroller">
             {questions.map((question, idx) => {
             return <div key={`${question}-${idx}`} className='answer-box'>
                 <Link onClick={() =>setSelectedQuestion(question)} className="questions" to={{ pathname:`/Answers/`, state: {selectedQuestion: question} }} >
+                <h4 className="genre-name">Genre: {question.musicgenre}</h4>
                 <h2>{question.title}</h2>
-
                 <h3>{question.body}</h3></Link>
                 
-                <h4>{question.musicgenre}</h4>
+                
                 
 
-                <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author, userQuestion: question.body } }}> <h4>{question.author.username}</h4></Link>
+                <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author, userQuestion: question.body } }}> <h5 className="username">{question.author.username}</h5></Link>
 
                 <DeleteQuestion selectedQuestion={selectedQuestion} setSelectedQuestion={setSelectedQuestion} />
-                </div>
-                
+                </div> 
         })}
+        </div>
+         <div className="question-answer">
+            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} token={token} newQuestion={showNewQuestion}/>
+            <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
+            </div>
         </div>
 )
 }

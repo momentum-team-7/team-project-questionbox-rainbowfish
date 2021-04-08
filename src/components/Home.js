@@ -26,7 +26,7 @@ function Home({ setSelectedGenre }) {
     return (
     <div>
     
-    <div>
+    <div  id="scroller2">
     <ul className="genre-container">
     {GENRES.map((genre) => {
     return <h2 key={genre} className="genre-item">

@@ -32,7 +32,7 @@ const DeleteQuestion = ({ token, selectedQuestion }) => {
 
     return (
     <>
-        <button onClick={() => handleSubmit()} type="submit">Delete</button>
+        <button onClick={() => handleSubmit()} type="submit" className="delete-btn">Delete</button>
     
     </>
     )
