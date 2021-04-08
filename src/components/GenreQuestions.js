@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, setState } from 'react'
 // import dataQuestions from './api.js'
 import axios from 'axios';
 import QuestionField from './AddQuestion.js'
@@ -33,11 +33,16 @@ function GenreQuestions({ selectedGenre, token } ) {
        
     // } 
     // filterQuestions()
+    let showNewQuestion = (newQ) => {
+        questions.push(newQ)
+        setQuestions([...questions])
+        // forceUpdate()
+    }
 
     return (
         <div>
             <div className="question-answer">
-            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} token={token} />
+            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} token={token} newQuestion={showNewQuestion}/>
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
             

@@ -2,13 +2,16 @@ import axios from 'axios'
 import {useState} from 'react'
 
 
-const QuestionField = ({askQuestion, setAskQuestion, token }) => {
+const QuestionField = ({askQuestion, setAskQuestion, token, newQuestion }) => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [tags, setTags] = useState("")
     const [musicGenre, setMusicGenre] = useState("")
 
-
+    let returnQuestion = (data) => {
+      let question = data
+      newQuestion(question)
+    }
     const handleSubmit = (event) => {
       event.preventDefault()
       axios.post(
@@ -25,6 +28,8 @@ const QuestionField = ({askQuestion, setAskQuestion, token }) => {
       }
       ).then(res => {
         console.log('res ', res.data)
+        returnQuestion(res.data)
+        // newQuestion(res.data)
       }).catch(err => {
         console.log('err ', err)
       })
