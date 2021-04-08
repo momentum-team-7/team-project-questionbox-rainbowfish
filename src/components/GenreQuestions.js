@@ -18,14 +18,9 @@ function GenreQuestions({ selectedGenre, token, questions } ) {
         setFilteredQuestions(questions.filter((question) => selectedGenre === question.musicgenre))
     }, [])    
     
-
-
-    
-
-    
     let showNewQuestion = (newQ) => {
         questions.push(newQ)
-      
+        setFilteredQuestions([...questions])
     }
 
     return (
@@ -51,7 +46,7 @@ function GenreQuestions({ selectedGenre, token, questions } ) {
                 </div> 
         })}
         </div>
-         <div className="question-answer">
+        <div className="question-answer">
             <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} token={token} newQuestion={showNewQuestion}/>
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
