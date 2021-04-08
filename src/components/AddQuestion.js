@@ -9,9 +9,11 @@ const QuestionField = ({askQuestion, setAskQuestion, token, newQuestion }) => {
     const [musicGenre, setMusicGenre] = useState("")
 
     let returnQuestion = (data) => {
+      // return question function takes data from API call and gives it to prop/function. 
       let question = data
       newQuestion(question)
     }
+
     const handleSubmit = (event) => {
       event.preventDefault()
       axios.post(
@@ -21,7 +23,6 @@ const QuestionField = ({askQuestion, setAskQuestion, token, newQuestion }) => {
           body: body,
           tags: tags,
           musicgenre: musicGenre
-          
         },
         {
           headers: { Authorization: `Token ${token}`},
@@ -29,7 +30,8 @@ const QuestionField = ({askQuestion, setAskQuestion, token, newQuestion }) => {
       ).then(res => {
         console.log('res ', res.data)
         returnQuestion(res.data)
-        // newQuestion(res.data)
+        // data given to return question, which gives it to new question, which gives it to genrequestion 
+        //(res.data the data returned when new question posted. )
       }).catch(err => {
         console.log('err ', err)
       })

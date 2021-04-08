@@ -19,9 +19,13 @@ function GenreQuestions({ selectedGenre, token, questions } ) {
     }, [])    
     
     let showNewQuestion = (newQ) => {
-        
+        // arrow function that returns data from the add question component. 
+        // newQ data being returned from addquestion.js
+        //after newQ arrives, we update the state. render w/o reloading. 
+        // react does not rerender if just adding new object to array. [...questions] setting state this way forces rerender.  
         questions.push(newQ)
         setFilteredQuestions([...questions.filter((question) => selectedGenre === question.musicgenre)])
+        // added filter to keep same genre questions 
     }
 
     return (
@@ -49,7 +53,12 @@ function GenreQuestions({ selectedGenre, token, questions } ) {
         })}
         </div>
         <div className="question-answer">
-            <QuestionField askQuestion={askQuestion} setAskQuestion={setAskQuestion} token={token} newQuestion={showNewQuestion}/>
+            {/* showNewQuestion function from above passed to questionfield as prop.  */}
+            <QuestionField 
+                askQuestion={askQuestion} 
+                setAskQuestion={setAskQuestion} 
+                token={token} 
+                newQuestion={showNewQuestion}/>
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
         </div>
