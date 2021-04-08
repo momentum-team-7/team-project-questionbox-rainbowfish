@@ -54,7 +54,7 @@ function GenreQuestions({ selectedGenre, token } ) {
 
                 <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author, userQuestion: question.body } }}> <h5 className="username">{question.author.username}</h5></Link>
 
-                <DeleteQuestion selectedQuestion={selectedQuestion} setSelectedQuestion={setSelectedQuestion} />
+                <DeleteQuestion selectedQuestion={selectedQuestion} setSelectedQuestion={setSelectedQuestion} question={question} />
                 </div> 
         })}
         </div>
