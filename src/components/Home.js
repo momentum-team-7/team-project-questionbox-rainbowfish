@@ -30,7 +30,7 @@ function Home({ setSelectedGenre }) {
     <ul className="genre-container">
     {GENRES.map((genre) => {
     return <h2 key={genre} className="genre-item">
-        <Link to={`/GenreQuestions/`} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre}</Link>
+        <Link to={{ pathname:`/GenreQuestions/`, state:{selectedGenre: genre} }} onClick={() =>setSelectedGenre(genre)} className="genre-links">{genre}</Link>
         </h2>
 })}
 
