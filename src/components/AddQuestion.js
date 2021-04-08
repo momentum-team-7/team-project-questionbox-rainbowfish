@@ -43,7 +43,7 @@ const QuestionField = ({askQuestion, setAskQuestion, token, newQuestion }) => {
         <textarea type="text" onChange={(event) => setBody(event.target.value)} placeholder="Add some detail.."  style={askQuestion ? {} : { display: 'none' }}/>
         <input type="text" onChange={(event) => setTags(event.target.value)} placeholder="tags tags tags" style={askQuestion ? {} : { display: 'none' }}/>
         <select onChange={(event) => setMusicGenre(event.target.value)} style={askQuestion ? {} : { display: 'none' }} placeholder="Select Genre">
-        <option value="" disabled selected>Select Genre</option>
+        <option value="" disabled selected className='genre-selection'>Select Genre</option>
           <option value="Country">Country</option>
           <option value="Folk">Folk</option>
           <option value="Electronic">Electronic</option>
