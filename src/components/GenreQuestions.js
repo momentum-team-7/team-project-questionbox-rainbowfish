@@ -3,46 +3,39 @@ import { useState, useEffect, setState } from 'react'
 import axios from 'axios';
 import QuestionField from './AddQuestion.js'
 import DeleteQuestion from './DeleteQuestion.js'
+import _ from 'lodash'
 import { Link } from 'react-router-dom';
 
 
-function GenreQuestions({ selectedGenre, token } ) {
+function GenreQuestions({ selectedGenre, token, questions } ) {
 
-    const [questions, setQuestions] = useState([])
     const [selectedQuestion, setSelectedQuestion] = useState(null)
     const [askQuestion, setAskQuestion] = useState(false)
     const [selectedUser, setSelectedUser] = useState(null)
     const [filteredQuestions, setFilteredQuestions] = useState([])
-        // console.log(selectedGenre)
-    useEffect(() => {
-    axios.get(`https://questionbox-torpedo-shark.herokuapp.com/questions/`).then((response) => {
-        
-        setQuestions(response.data)
-        // console.log('rspdatamg', response.data.map(genre => genre.musicgenre))
-            const musicGenre = response.data.map(genre => genre.musicgenre)
-            // const ques = response.data.filter(question => selectedGenre === response.data.map(genre => genre.musicgenre))
-                if (selectedGenre === musicGenre) {
-                setFilteredQuestions(questions)
-               }
-    })}, [])
-    // console.log('filteredQuestions', filteredQuestions)
 
-    // function filterQuestions() {
-       
-    // } 
-    // filterQuestions()
+    useEffect (() => {
+        setFilteredQuestions(questions.filter((question) => selectedGenre === question.musicgenre))
+    }, [])    
+    
+
+
+    
 
     
     let showNewQuestion = (newQ) => {
         questions.push(newQ)
-        setQuestions([...questions])
       
     }
 
     return (
+        <>
+        {filteredQuestions && filteredQuestions.length === 0 && 
+        <div className='empty-message'><h1>Sorry, No Questions Babe</h1></div>
+        }
         <div>
             <div id="scroller">
-            {questions.map((question, idx) => {
+            {filteredQuestions.map((question, idx) => {
             return <div key={`${question}-${idx}`} className='answer-box'>
                 <Link onClick={() =>setSelectedQuestion(question)} className="questions" to={{ pathname:`/Answers/`, state: {selectedQuestion: question} }} >
                 <h4 className="genre-name">Genre: {question.musicgenre}</h4>
@@ -63,6 +56,7 @@ function GenreQuestions({ selectedGenre, token } ) {
             <button onClick={() =>setAskQuestion(!askQuestion)} style={askQuestion ? { display: 'none' } : {}}>Have something to say? Add it here. </button>
             </div>
         </div>
+        </>
 )
 }
 

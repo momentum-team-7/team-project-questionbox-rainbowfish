@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
+import axios from 'axios'
 import About from './components/About'
 import Nav from './components/Nav'
 import Home from './components/Home'
@@ -17,10 +18,20 @@ import {
 } from 'react-router-dom';
 
 
+
   function App() {
     const [username, setUsername] = useLocalStorageState('username', '')
     const [token, setToken] = useLocalStorageState('token', '')
-    const [selectedGenre,setSelectedGenre] = useState('Booty Bass')
+    const [selectedGenre,setSelectedGenre] = useState('')
+    const [questions, setQuestions] = useState([])
+
+    useEffect(() => {
+    axios.get(`https://questionbox-torpedo-shark.herokuapp.com/questions/`).then((response) => {
+        
+        setQuestions(response.data)
+        
+        
+    })}, [])
 
 
     function setAuth(username, token) {
@@ -55,7 +66,7 @@ import {
         </Route> 
 
         <Route path="/GenreQuestions" >
-          <GenreQuestions token={token} selectedGenre={selectedGenre} />
+          <GenreQuestions questions={questions} token={token} selectedGenre={selectedGenre} />
           </Route>
 
         <Route path="/Register">
