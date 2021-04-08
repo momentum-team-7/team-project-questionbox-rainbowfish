@@ -194,10 +194,10 @@ button {
   padding: 50px;
 }
 .user-questions {
-    padding: 50px;
+  padding: 50px;
 }
 .user-answer {
-    padding: 50px;
+  padding: 50px;
 }
 
 form {
@@ -212,21 +212,39 @@ input {
   border: 3px solid rgb(0, 0, 0);
 }
 
+.delete-btn {
+  width: 50px;
+}
+
+.username {
+  margin: 5px;
+}
+
 .like-box {
-    display: flex;
-    flex-direction: row;
-    
+  display: flex;
+  flex-direction: row;
 }
 .like-btn {
-    border-radius: 50%;
-    width: 50px;
-    
+  border-radius: 50%;
+  width: 50px;
 }
 .dislike-btn {
-    border-radius: 50%;
-    width: 50px;
+  border-radius: 50%;
+  width: 50px;
 }
-/* .search-scroll {
+
+.team-name {
+  margin: 0 auto;
+}
+
+#scroller {
   overflow-x: hidden;
   overflow-y: auto;
-} */
+  height: 500px;
+}
+
+#scroller2 {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 700px;
+}
