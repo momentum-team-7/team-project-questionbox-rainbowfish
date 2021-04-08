@@ -26,7 +26,8 @@ function GenreQuestions({ selectedGenre, token, questions } ) {
     return (
         <>
         {filteredQuestions && filteredQuestions.length === 0 && 
-        <div className='empty-message'><h1>Sorry, No Questions Babe</h1></div>
+        <div className='empty-message'><h1>Sorry, No Questions Babe.</h1>
+        <h2 className='sub-empty-message'>Consider adding one below :)</h2></div>
         }
         <div>
             <div id="scroller">

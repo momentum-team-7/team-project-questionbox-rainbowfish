@@ -253,14 +253,18 @@ option {
 }
 
 .empty-message {
-  font-family: 'Bangers';
-  font-size: 70px;
+  font-family: "Bangers";
+  font-size: 55px;
   color: #f71735;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+.sub-empty-message {
+  font-size: 40px;
+}
 
 #scroller2 {
   overflow-x: hidden;
