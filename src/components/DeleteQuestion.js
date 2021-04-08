@@ -11,15 +11,13 @@ const DeleteQuestion = ({ token, question}) => {
 
     const handleSubmit = (event) => {
       
-    //   event.preventDefault()
+      event.preventDefault()
       axios.delete(
         `https://questionbox-torpedo-shark.herokuapp.com/questions/${question.id}/`,
-       
+
         {
           headers: { Authorization: `Token ${token}`},
-          data: {
-           
-          }
+       
       },
      
       ).then(res => {
@@ -32,7 +30,7 @@ const DeleteQuestion = ({ token, question}) => {
 
     return (
     <>
-        <button onClick={() => handleSubmit()} type="submit" className="delete-btn">Delete</button>
+        <button onClick={(event) => handleSubmit(event)} type="submit" className="delete-btn">Delete</button>
     
     </>
     )

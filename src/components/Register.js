@@ -18,9 +18,10 @@ export default function Registration({token, username, setAuth, isLoggedIn, setU
             })
             .then((response) => {
                 return axios 
-                .post('http://questionbox-torpedo-shark.herokuapp.com/auth/token/login', {
+                .post('http://questionbox-torpedo-shark.herokuapp.com/auth/token/login/', {
                     username,
                     password,
+                    token,
                 })
                 .then((data) => {
                     if (data && data.data.auth_token) {
