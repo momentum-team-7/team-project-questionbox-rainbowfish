@@ -60,7 +60,7 @@ nav {
 }
 
 .genre-links {
-  font-family: "Oswald", sans-serif;
+  font-family: 'Bangers';
   text-decoration: none;
 }
 
@@ -83,7 +83,7 @@ nav {
 }
 
 .questions {
-  font-family: "Arial";
+  font-family: "Roboto";
   text-decoration: none;
   color: black;
 }
@@ -233,15 +233,22 @@ input {
   width: 50px;
 }
 
+
 .team-name {
   margin: 0 auto;
 }
 
 #scroller {
-  overflow-x: hidden;
+    overflow-x: hidden;
   overflow-y: auto;
   height: 500px;
 }
+
+option {
+  border: 3px solid rgb(163, 215, 247);
+  border-radius: 25%;
+}
+
 
 #scroller2 {
   overflow-x: hidden;
