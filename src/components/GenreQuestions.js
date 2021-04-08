@@ -19,7 +19,7 @@ function GenreQuestions({ selectedGenre, token } ) {
         
         setQuestions(response.data)
         // console.log('rspdatamg', response.data.map(genre => genre.musicgenre))
-        // const musicGenre = response.data.map(genre => genre.musicgenre)
+            const musicGenre = response.data.map(genre => genre.musicgenre)
         // const ques = response.data.filter(question => selectedGenre === response.data.map(genre => genre.musicgenre))
         // console.log('ques', ques)
         //  if (selectedGenre === musicGenre) {

@@ -2,14 +2,15 @@ import axios from 'axios'
 import {useState} from 'react'
 
 
-const DeleteQuestion = ({token, selectedQuestion}) => {
-    const [title, setTitle] = useState("")
-    const [body, setBody] = useState("")
-    const [tags, setTags] = useState("")
+const DeleteQuestion = ({ token, selectedQuestion }) => {
+    const [title, setTitle] = useState('')
+    const [body, setBody] = useState('')
+    const [tags, setTags] = useState('')
 
+    
 
     const handleSubmit = (event) => {
-
+      
     //   event.preventDefault()
       axios.post(
         `https://questionbox-torpedo-shark.herokuapp.com/questions/${selectedQuestion.id}`,

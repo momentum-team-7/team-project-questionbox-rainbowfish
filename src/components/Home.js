@@ -36,7 +36,9 @@ function Home({ setSelectedGenre }) {
 
     </ul>
     </div>
+       
     </div>
+
     )
 
 }
