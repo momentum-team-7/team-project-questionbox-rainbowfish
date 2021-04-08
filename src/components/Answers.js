@@ -26,7 +26,7 @@ function QuestionAnswers( props ) {
                 <h2>{answers[key].body}</h2>
                 <Link onClick={() =>setSelectedUser()} 
                     className="answer-author" 
-                    to={{ pathname: `/UserProfile/`, state: {selectedUser: answers[key].author.username, userAnswer: answers[key].body } }}>
+                    to={{ pathname: `/UserProfile/`, state: {selectedUser: answers[key].author, userAnswer: answers[key].body } }}>
                         <h3>{answers[key].author.username}</h3>
                 </Link>
                 {/* <LikeBtn /> */}
