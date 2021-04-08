@@ -48,6 +48,8 @@ function GenreQuestions({ selectedGenre, token } ) {
 
                 <h3>{question.body}</h3></Link>
                 
+                <h4>{question.musicgenre}</h4>
+                
 
                 <Link onClick={() =>setSelectedUser()} className="question-author" to={{ pathname: `/UserProfile/`, state: {selectedUser: question.author, userQuestion: question.body } }}> <h4>{question.author.username}</h4></Link>
 
