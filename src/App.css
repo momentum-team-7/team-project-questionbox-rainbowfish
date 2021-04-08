@@ -236,6 +236,8 @@ input {
 
 .team-name {
   margin: 0 auto;
+  font-family: "Nanum Brush Script", cursive;
+  font-size: 75px;
 }
 
 #scroller {
